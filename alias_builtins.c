@@ -5,8 +5,8 @@ void set_alias(char *var_name, char *value);
 void print_alias(alias_t *alias);
 
 /**
- * shellby_alias - Builtin 
- * @args: An 
+ * shellby_alias - func
+ * @args: argument
  * @front: A double
  * Return: If an
  */
