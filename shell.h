@@ -55,6 +55,7 @@ typedef struct alias_s
 alias_t *aliases;
 
 ssize_t _getline(char **lineptr, size_t *n, FILE *stream);
+ssize_t get_new_len(char *line);
 alias_t *add_alias_end(alias_t **head, char *name, char *value);
 list_t *get_path_dir(char *path);
 list_t *add_node_end(list_t **head, char *dir);
@@ -77,6 +78,9 @@ char *error_127(char **args);
 char **_copyenv(void);
 char **_getenv(const char *var);
 char *_strchr(char *s, char c);
+char *get_pid(void);
+char *get_env_value(char *beginning, int len);
+char *fill_path_dir(char *path);
 
 int execute(char **args, char **front);
 int call_args(char **args, char **front, int *exe_ret);
@@ -97,6 +101,11 @@ int handle_args(int *exe_ret);
 int check_args(char **args);
 int create_error(char **args, int err);
 int proc_file_commands(char *file_path, int *exe_ret);
+int num_len(int num);
+int main(int argc, char *argv[])
+int cant_open(char *file_path);
+int token_len(char *str, char *delim);
+int count_tokens(char *str, char *delim);
 
 void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size);
 void handle_line(char **line, ssize_t read);
@@ -106,6 +115,11 @@ void free_list(list_t *head);
 void free_alias_list(alias_t *head);
 void free_env(void);
 void free_list(list_t *head);
+void set_alias(char *var_name, char *value);
+void print_alias(alias_t *alias);
+void assign_lineptr(char **lineptr, size_t *n, char *buffer, size_t b);
+void logical_ops(char *line, ssize_t *new_len);
+void sig_handler(int sig);
 
 
 void help_all(void);
