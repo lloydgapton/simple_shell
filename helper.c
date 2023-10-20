@@ -1,16 +1,16 @@
 #include "shell.h"
 
-void free_args(char **args, char **front);
-char *get_pid(void);
+void args_free(char **args, char **front);
+char *pid_get(void);
 char *get_env_value(char *beginning, int len);
-void variable_replacement(char **args, int *exe_ret);
+void rep_var(char **args, int *exe_ret);
 
 /**
- * free_args - Free
+ * args_free - Free
  * @args: A null-termi
  * @front: A double p
  */
-void free_args(char **args, char **front)
+void args_free(char **args, char **front)
 {
 	size_t i;
 
@@ -21,10 +21,10 @@ void free_args(char **args, char **front)
 }
 
 /**
- * get_pid - Gets the cu
+ * pid_get - Gets the cu
  * Return: The cu
  */
-char *get_pid(void)
+char *pid_get(void)
 {
 	size_t i = 0;
 	char *buffer;
@@ -52,7 +52,7 @@ char *get_pid(void)
 }
 
 /**
- * get_env_value - Gets the valu
+ * get_env_value - Get
  * @beginning: The environ
  * @len: The length o
  * Return: If the v
@@ -85,11 +85,11 @@ char *get_env_value(char *beginning, int len)
 }
 
 /**
- * variable_replacement - Handles var
+ * rep_var - Handles var
  * @line: A double poi
  * @exe_ret: A pointe
  */
-void variable_replacement(char **line, int *exe_ret)
+void rep_var(char **line, int *exe_ret)
 {
 	int j, k = 0, len;
 	char *replacement = NULL, *old_line = NULL, *new_line;
