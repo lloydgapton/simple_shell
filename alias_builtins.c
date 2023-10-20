@@ -6,7 +6,7 @@ void alias_set(char *var_name, char *value);
 void alias_print(alias_t *alias);
 
 /**
- * shellby_alias - func
+ * alias_shellby - func
  * @args: argument
  * @front: A double
  * Return: If an
@@ -51,7 +51,7 @@ int alias_shellby(char **args, char __attribute__((__unused__)) **front)
 }
 
 /**
- * set_alias - Will
+ * alias_set - Will
  * @var_name: Name
  * @value: Value of
  */
@@ -88,7 +88,7 @@ void alias_set(char *var_name, char *value)
 }
 
 /**
- * print_alias - Prints the
+ * alias_print - Prints the
  * @alias: Point
  */
 void alias_print(alias_t *alias)
@@ -108,7 +108,7 @@ void alias_print(alias_t *alias)
 	free(alias_string);
 }
 /**
- * replace_aliases - Goes through
+ * aliases_replace - Goes through
  * @args: 2D poin
  * Return: 2D p
  */
