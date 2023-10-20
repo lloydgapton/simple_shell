@@ -52,7 +52,7 @@ int _strspn(char *s, char *accept)
 
 /**
  * _strcmp - Co
- * @s2: stroing
+ * @s1: stroing
  * @s2: Th
  * Return: int
  */

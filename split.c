@@ -49,7 +49,7 @@ int count_tokens(char *str, char *delim)
 }
 
 /**
- * _strtok: noiu
+ * _strtok - noiu
  * @line: fry
  * @delim: The delimi
  * Return: A point
