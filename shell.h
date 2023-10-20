@@ -61,18 +61,18 @@ ssize_t _getline(char **lineptr, size_t *n, FILE *stream);
 void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size);
 char **_strtok(char *line, char *delim);
 char *get_location(char *command);
-list_t *get_path_dir(char *path);
+list_t *dir_path_get(char *path);
 int execute(char **args, char **front);
 void free_list(list_t *head);
 char *_itoa(int num);
 
 void line_handle(char **line, ssize_t read);
 void rep_var(char **args, int *exe_ret);
-char *get_args(char *line, int *exe_ret);
-int call_args(char **args, char **front, int *exe_ret);
-int run_args(char **args, char **front, int *exe_ret);
-int handle_args(int *exe_ret);
-int check_args(char **args);
+char *args_get(char *line, int *exe_ret);
+int args_call(char **args, char **front, int *exe_ret);
+int args_run(char **args, char **front, int *exe_ret);
+int args_handle(int *exe_ret);
+int args_check(char **args);
 void args_free(char **args, char **front);
 char **aliases_replace(char **args);
 
@@ -113,14 +113,14 @@ list_t *add_node_end(list_t **head, char *dir);
 void free_list(list_t *head);
 
 void all_help(void);
+void setenv_help(void);
+void unsetenv_help(void);
 void alias_help(void);
+void env_help(void);
+void history_help(void);
 void cd_help(void);
 void exit_help(void);
 void help_help(void);
-void env_help(void);
-void setenv_help(void);
-void unsetenv_help(void);
-void history_help(void);
 
-int proc_file_commands(char *file_path, int *exe_ret);
+int commands_file_proc(char *file_path, int *exe_ret);
 #endif /* _SHELL_H_ */
