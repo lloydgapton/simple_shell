@@ -6,7 +6,7 @@ void unsetenv_help(void);
 void history_help(void);
 
 /**
- * help_env - Display
+ * env_help - Display
  */
 void env_help(void)
 {
@@ -16,7 +16,7 @@ void env_help(void)
 }
 
 /**
- * help_setenv - Displays informat
+ * setenv_help - Displays informat
  */
 void setenv_help(void)
 {
@@ -32,7 +32,7 @@ void setenv_help(void)
 /**
  * help_unsetenv - Displays inf
  */
-void unsetenv_help(void)
+void help_unsetenv(void)
 {
 	char *msg = "unsetenv: unsetenv [VARIABLE]\n\tRemoves an ";
 
