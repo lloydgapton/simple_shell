@@ -5,7 +5,7 @@ int setenv_shellby(char **args, char __attribute__((__unused__)) **front);
 int unsetenv_shellby(char **args, char __attribute__((__unused__)) **front);
 
 /**
- * shellby_env - Pr
+ * env_shellby - Pr
  * @args: An arra
  * @front: A doub
  * Return: If
