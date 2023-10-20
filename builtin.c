@@ -32,7 +32,7 @@ int (*get_builtin(char *command))(char **args, char **front)
 }
 
 /**
- * shellby_exit - Cause
+ * exit_shellby - Cause
  * @args: ng th.
  * @front: A doubl
  * Return: If the
@@ -72,7 +72,7 @@ int exit_shellby(char **args, char **front)
 }
 
 /**
- * shellby_cd - Change
+ * cd_shellby - Change
  * @args: An arr.
  * @front: A dou
  * Return: If the
@@ -150,7 +150,7 @@ int cd_shellby(char **args, char __attribute__((__unused__)) **front)
 }
 
 /**
- * shellby_help - ommands.
+ * help_shellby - ommands.
  * @args: An arra
  * @front: A po
  * Return: if
