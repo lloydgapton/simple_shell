@@ -1,15 +1,15 @@
 #include "shell.h"
 
-void handle_line(char **line, ssize_t read);
+void line_handle(char **line, ssize_t read);
 ssize_t get_new_len(char *line);
-void logical_ops(char *line, ssize_t *new_len);
+void ops_logical(char *line, ssize_t *new_len);
 
 /**
- * handle_line - Part
+ * line_handle - Part
  * @line: A p
  * @read: The le
  */
-void handle_line(char **line, ssize_t read)
+void line_handle(char **line, ssize_t read)
 {
 	char *old_line, *new_line;
 	char previous, current, next;
@@ -150,11 +150,11 @@ ssize_t get_new_len(char *line)
 	return (new_len);
 }
 /**
- * logical_ops - Check
+ * ops_logical - Check
  * @line: A po
  * @new_len: Poin
  */
-void logical_ops(char *line, ssize_t *new_len)
+void ops_logical(char *line, ssize_t *new_len)
 {
 	char previous, current, next;
 
