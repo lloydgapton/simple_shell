@@ -1,16 +1,16 @@
 #include "shell.h"
 
-char *error_env(char **args);
+char *env_error(char **args);
 char *error_1(char **args);
-char *error_2_exit(char **args);
-char *error_2_cd(char **args);
-char *error_2_syntax(char **args);
+char *exit_2_error(char **args);
+char *cd_2_error(char **args);
+char *syntax_2_error(char **args);
 /**
- * error_env - creates
+ * env_error - creates
  * @args: An arr
  * Return: The
  */
-char *error_env(char **args)
+char *env_error(char **args)
 {
 	char *error, *hist_str;
 	int len;
@@ -62,11 +62,11 @@ char *error_1(char **args)
 }
 
 /**
- * error_2_exit - Creates an err
+ * exit_2_error - Creates an err
  * @args: An arra
  * Return: The err
  */
-char *error_2_exit(char **args)
+char *exit_2_error(char **args)
 {
 	char *error, *hist_str;
 	int len;
@@ -95,11 +95,11 @@ char *error_2_exit(char **args)
 }
 
 /**
- * error_2_cd - Creates
+ * cd_2_error - Creates
  * @args: An ar
  * Return: The err
  */
-char *error_2_cd(char **args)
+char *cd_2_error(char **args)
 {
 	char *error, *hist_str;
 	int len;
@@ -133,11 +133,11 @@ char *error_2_cd(char **args)
 }
 
 /**
- * error_2_syntax - Creates an err
+ * syntax_2_error - Creates an err
  * @args: An array of arg
  * Return: The
  */
-char *error_2_syntax(char **args)
+char *syntax_2_error(char **args)
 {
 	char *error, *hist_str;
 	int len;
