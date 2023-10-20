@@ -1,15 +1,15 @@
 #include "shell.h"
 
-int num_len(int num);
+int len_num(int num);
 char *_itoa(int num);
-int create_error(char **args, int err);
+int error_create(char **args, int err);
 
 /**
- * num_len - counts
+ * len_num - counts
  * @num: Th
  * Return: The di
  */
-int num_len(int num)
+int len_num(int num)
 {
 	unsigned int num1;
 	int len = 1;
@@ -71,12 +71,12 @@ char *_itoa(int num)
 
 
 /**
- * create_error - Writes
+ * error_create - Writes
  * @args: A
  * @err: The er
  * Return: The
  */
-int create_error(char **args, int err)
+int error_create(char **args, int err)
 {
 	char *error;
 
