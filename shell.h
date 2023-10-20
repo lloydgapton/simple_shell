@@ -66,15 +66,15 @@ int execute(char **args, char **front);
 void free_list(list_t *head);
 char *_itoa(int num);
 
-void handle_line(char **line, ssize_t read);
-void variable_replacement(char **args, int *exe_ret);
+void line_handle(char **line, ssize_t read);
+void rep_var(char **args, int *exe_ret);
 char *get_args(char *line, int *exe_ret);
 int call_args(char **args, char **front, int *exe_ret);
 int run_args(char **args, char **front, int *exe_ret);
 int handle_args(int *exe_ret);
 int check_args(char **args);
-void free_args(char **args, char **front);
-char **replace_aliases(char **args);
+void args_free(char **args, char **front);
+char **aliases_replace(char **args);
 
 int _strlen(const char *s);
 char *_strcat(char *dest, const char *src);
@@ -86,24 +86,24 @@ int _strcmp(char *s1, char *s2);
 int _strncmp(const char *s1, const char *s2, size_t n);
 
 int (*get_builtin(char *command))(char **args, char **front);
-int shellby_exit(char **args, char **front);
-int shellby_env(char **args, char __attribute__((__unused__)) **front);
-int shellby_setenv(char **args, char __attribute__((__unused__)) **front);
-int shellby_unsetenv(char **args, char __attribute__((__unused__)) **front);
-int shellby_cd(char **args, char __attribute__((__unused__)) **front);
-int shellby_alias(char **args, char __attribute__((__unused__)) **front);
-int shellby_help(char **args, char __attribute__((__unused__)) **front);
+int exit_shellby(char **args, char **front);
+int env_shellby(char **args, char __attribute__((__unused__)) **front);
+int setenv_shellby(char **args, char __attribute__((__unused__)) **front);
+int unsetenv_shellby(char **args, char __attribute__((__unused__)) **front);
+int cd_shellby(char **args, char __attribute__((__unused__)) **front);
+int alias_shellby(char **args, char __attribute__((__unused__)) **front);
+int help_shellby(char **args, char __attribute__((__unused__)) **front);
 
 char **_copyenv(void);
-void free_env(void);
+void env_free(void);
 char **_getenv(const char *var);
 
-int create_error(char **args, int err);
-char *error_env(char **args);
+int error_create(char **args, int err);
+char *env_error(char **args);
 char *error_1(char **args);
-char *error_2_exit(char **args);
-char *error_2_cd(char **args);
-char *error_2_syntax(char **args);
+char *exit_2_error(char **args);
+char *cd_2_error(char **args);
+char *syntax_2_error(char **args);
 char *error_126(char **args);
 char *error_127(char **args);
 
@@ -112,15 +112,15 @@ void free_alias_list(alias_t *head);
 list_t *add_node_end(list_t **head, char *dir);
 void free_list(list_t *head);
 
-void help_all(void);
-void help_alias(void);
-void help_cd(void);
-void help_exit(void);
+void all_help(void);
+void alias_help(void);
+void cd_help(void);
+void exit_help(void);
 void help_help(void);
-void help_env(void);
-void help_setenv(void);
-void help_unsetenv(void);
-void help_history(void);
+void env_help(void);
+void setenv_help(void);
+void unsetenv_help(void);
+void history_help(void);
 
 int proc_file_commands(char *file_path, int *exe_ret);
 #endif /* _SHELL_H_ */
