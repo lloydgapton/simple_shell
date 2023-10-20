@@ -1,8 +1,8 @@
 #include "shell.h"
 
-int shellby_env(char **args, char __attribute__((__unused__)) **front);
-int shellby_setenv(char **args, char __attribute__((__unused__)) **front);
-int shellby_unsetenv(char **args, char __attribute__((__unused__)) **front);
+int env_shellby(char **args, char __attribute__((__unused__)) **front);
+int setenv_shellby(char **args, char __attribute__((__unused__)) **front);
+int unsetenv_shellby(char **args, char __attribute__((__unused__)) **front);
 
 /**
  * shellby_env - Pr
@@ -11,7 +11,7 @@ int shellby_unsetenv(char **args, char __attribute__((__unused__)) **front);
  * Return: If
  * Description: Prints one var
  */
-int shellby_env(char **args, char __attribute__((__unused__)) **front)
+int env_shellby(char **args, char __attribute__((__unused__)) **front)
 {
 	int index;
 	char nc = '\n';
@@ -30,12 +30,12 @@ int shellby_env(char **args, char __attribute__((__unused__)) **front)
 }
 
 /**
- * shellby_setenv - Changes or
+ * setenv_shellby - Changes or
  * @args: An arra
  * @front: A doub
  * Return: If an error o
  */
-int shellby_setenv(char **args, char __attribute__((__unused__)) **front)
+int setenv_shellby(char **args, char __attribute__((__unused__)) **front)
 {
 	char **env_var = NULL, **new_environ, *new_value;
 	size_t size;
@@ -80,12 +80,12 @@ int shellby_setenv(char **args, char __attribute__((__unused__)) **front)
 }
 
 /**
- * shellby_unsetenv - Deletes a
+ * unsetenv_shellby - Deletes a
  * @args: An array of argu
  * @front: A double point
  * Return: If an er
  */
-int shellby_unsetenv(char **args, char __attribute__((__unused__)) **front)
+int unsetenv_shellby(char **args, char __attribute__((__unused__)) **front)
 {
 	char **env_var, **new_environ;
 	size_t size;
