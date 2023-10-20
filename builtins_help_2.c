@@ -1,14 +1,14 @@
 #include "shell.h"
 
-void help_env(void);
-void help_setenv(void);
-void help_unsetenv(void);
-void help_history(void);
+void env_help(void);
+void setenv_help(void);
+void unsetenv_help(void);
+void history_help(void);
 
 /**
  * help_env - Display
  */
-void help_env(void)
+void env_help(void)
 {
 	char *msg = "env: env\n\tPrints the current environment.\n";
 
@@ -18,7 +18,7 @@ void help_env(void)
 /**
  * help_setenv - Displays informat
  */
-void help_setenv(void)
+void setenv_help(void)
 {
 	char *msg = "setenv: setenv [VARIABLE] [VALUE]\n\tInitializes a new";
 
@@ -32,7 +32,7 @@ void help_setenv(void)
 /**
  * help_unsetenv - Displays inf
  */
-void help_unsetenv(void)
+void unsetenv_help(void)
 {
 	char *msg = "unsetenv: unsetenv [VARIABLE]\n\tRemoves an ";
 
