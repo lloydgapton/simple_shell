@@ -1,8 +1,8 @@
 #include "shell.h"
 int (*get_builtin(char *command))(char **args, char **front);
-int exit_shellby(char **args, char **front);
-int cd_shellby(char **args, char __attribute__((__unused__)) **front);
-int help_shellby(char **args, char __attribute__((__unused__)) **front);
+int shellby_exit(char **args, char **front);
+int shellby_cd(char **args, char __attribute__((__unused__)) **front);
+int shellby_help(char **args, char __attribute__((__unused__)) **front);
 
 /**
  * get_builtin - Match
@@ -32,13 +32,13 @@ int (*get_builtin(char *command))(char **args, char **front)
 }
 
 /**
- * exit_shellby - Cause
+ * shellby_exit - Cause
  * @args: ng th.
  * @front: A doubl
  * Return: If the
  * Description: Upon
  */
-int exit_shellby(char **args, char **front)
+int shellby_exit(char **args, char **front)
 {
 	int i, len_of_int = 10;
 	unsigned int num = 0, max = 1 << (sizeof(int) * 8 - 1);
@@ -72,12 +72,12 @@ int exit_shellby(char **args, char **front)
 }
 
 /**
- * cd_shellby - Change
+ * shellby_cd - Change
  * @args: An arr.
  * @front: A dou
  * Return: If the
  */
-int cd_shellby(char **args, char __attribute__((__unused__)) **front)
+int shellby_cd(char **args, char __attribute__((__unused__)) **front)
 {
 	char **dir_info, *new_line = "\n";
 	char *oldpwd = NULL, *pwd = NULL;
@@ -150,12 +150,12 @@ int cd_shellby(char **args, char __attribute__((__unused__)) **front)
 }
 
 /**
- * help_shellby - ommands.
+ * shellby_help - ommands.
  * @args: An arra
  * @front: A po
  * Return: if
  */
-int help_shellby(char **args, char __attribute__((__unused__)) **front)
+int shellby_help(char **args, char __attribute__((__unused__)) **front)
 {
 	if (!args[0])
 		help_all();

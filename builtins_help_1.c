@@ -1,15 +1,15 @@
 #include "shell.h"
 
-void all_help(void);
-void alias_help(void);
-void cd_help(void);
-void exit_help(void);
+void help_all(void);
+void help_alias(void);
+void help_cd(void);
+void help_exit(void);
 void help_help(void);
 
 /**
- * all_help - Display
+ * help_all - Display
  */
-void all_help(void)
+void help_all(void)
 {
 	char *msg = "Shellby\nThese shell commands are defined internally.\n";
 
@@ -29,9 +29,9 @@ void all_help(void)
 }
 
 /**
- * alias_help - Displa
+ * help_alias - Displa
  */
-void alias_help(void)
+void help_alias(void)
 {
 	char *msg = "alias: alias [NAME[='VALUE'] ...]\n\tHandles aliases.\n";
 
@@ -51,9 +51,9 @@ void alias_help(void)
 }
 
 /**
- * cd_help - Displays i
+ * help_cd - Displays i
  */
-void cd_help(void)
+void help_cd(void)
 {
 	char *msg = "cd: cd [DIRECTORY]\n\tChanges the current directory of the";
 
@@ -71,9 +71,9 @@ void cd_help(void)
 }
 
 /**
- * exit_help - Displays informa
+ * help_exit - Displays informa
  */
-void exit_help(void)
+void help_exit(void)
 {
 	char *msg = "exit: exit [STATUS]\n\tExits the shell.\n\n\tThe ";
 

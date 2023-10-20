@@ -1,7 +1,7 @@
 #include "shell.h"
 
 char **_copyenv(void);
-void env_free(void);
+void free_env(void);
 char **_getenv(const char *var);
 
 /**
@@ -40,9 +40,9 @@ char **_copyenv(void)
 }
 
 /**
- * env_free - Frees the th
+ * free_env - Frees the th
  */
-void env_free(void)
+void free_env(void)
 {
 	int index;
 

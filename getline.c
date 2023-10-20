@@ -1,7 +1,7 @@
 #include "shell.h"
 
 void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size);
-void lineptr_assign(char **lineptr, size_t *n, char *buffer, size_t b);
+void assign_lineptr(char **lineptr, size_t *n, char *buffer, size_t b);
 ssize_t _getline(char **lineptr, size_t *n, FILE *stream);
 
 /**
@@ -53,13 +53,13 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 }
 
 /**
- * lineptr_assign - Reassigns
+ * assign_lineptr - Reassigns
  * @lineptr: A buf
  * @n: The si
  * @buffer: The str
  * @b: Th
  */
-void lineptr_assign(char **lineptr, size_t *n, char *buffer, size_t b)
+void assign_lineptr(char **lineptr, size_t *n, char *buffer, size_t b)
 {
 	if (*lineptr == NULL)
 	{

@@ -1,17 +1,18 @@
 #include "shell.h"
-list_t *end_node_add(list_t **head, char *dir);
-void list_free(list_t *head);
-alias_t *end_alias_add(alias_t **head, char *name, char *value);
-void list_alias_free(alias_t *head);
+
+alias_t *add_alias_end(alias_t **head, char *name, char *value);
+void free_alias_list(alias_t *head);
+list_t *add_node_end(list_t **head, char *dir);
+void free_list(list_t *head);
 
 /**
- * end_alias_add - Adds
+ * add_alias_end - Adds
  * @head: A poin
  * @name: The nam
  * @value: Th
  * Return: If a
  */
-alias_t *end_alias_add(alias_t **head, char *name, char *value)
+alias_t *add_alias_end(alias_t **head, char *name, char *value)
 {
 	alias_t *new_node = malloc(sizeof(alias_t));
 	alias_t *last;
@@ -43,12 +44,12 @@ alias_t *end_alias_add(alias_t **head, char *name, char *value)
 }
 
 /**
- * end_node_add - Add
+ * add_node_end - Add
  * @head: A poin
  * @dir: The dir
  * Return: If an erro
  */
-list_t *end_node_add(list_t **head, char *dir)
+list_t *add_node_end(list_t **head, char *dir)
 {
 	list_t *new_node = malloc(sizeof(list_t));
 	list_t *last;
@@ -73,10 +74,10 @@ list_t *end_node_add(list_t **head, char *dir)
 }
 
 /**
- * list_alias_free - Fre
+ * free_alias_list - Fre
  * @head: THe he
  */
-void list_alias_free(alias_t *head)
+void free_alias_list(alias_t *head)
 {
 	alias_t *next;
 
@@ -91,10 +92,10 @@ void list_alias_free(alias_t *head)
 }
 
 /**
- * list_free - Fr
+ * free_list - Fr
  * @head: The
  */
-void list_free(list_t *head)
+void free_list(list_t *head)
 {
 	list_t *next;
 

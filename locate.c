@@ -1,7 +1,7 @@
 #include "shell.h"
 
-char *dir_path_fill(char *path);
-list_t *dir_path_get(char *path);
+char *fill_path_dir(char *path);
+list_t *get_path_dir(char *path);
 
 /**
  * get_location - Locat
@@ -47,11 +47,11 @@ char *get_location(char *command)
 }
 
 /**
- * dir_path_fill - Copie
+ * fill_path_dir - Copie
  * @path: The col
  * Return: A c
  */
-char *dir_path_fill(char *path)
+char *fill_path_dir(char *path)
 {
 	int i, length = 0;
 	char *path_copy, *pwd;
@@ -99,11 +99,11 @@ char *dir_path_fill(char *path)
 }
 
 /**
- * dir_path_get - Tokeni
+ * get_path_dir - Tokeni
  * @path: The colon
  * Return: A pointe
  */
-list_t *dir_path_get(char *path)
+list_t *get_path_dir(char *path)
 {
 	int index;
 	char **dirs, *path_copy;

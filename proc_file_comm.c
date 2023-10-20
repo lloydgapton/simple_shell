@@ -1,15 +1,15 @@
 #include "shell.h"
 
-int open_cant(char *file_path);
-int commands_file_proc(char *file_path, int *exe_ret);
+int cant_open(char *file_path);
+int proc_file_commands(char *file_path, int *exe_ret);
 
 /**
- * open_cant - If t
+ * cant_open - If t
  * @file_path: P
  * Return: 12
  */
 
-int open_cant(char *file_path)
+int cant_open(char *file_path)
 {
 	char *error, *hist_str;
 	int len;
@@ -40,12 +40,12 @@ int open_cant(char *file_path)
 }
 
 /**
- * commands_file_proc - Takes a f
+ * proc_file_commands - Takes a f
  * @file_path: Pa
  * @exe_ret: Retur
  * Return: If fi
  */
-int commands_file_proc(char *file_path, int *exe_ret)
+int proc_file_commands(char *file_path, int *exe_ret)
 {
 	ssize_t file, b_read, i;
 	unsigned int line_size = 0;
