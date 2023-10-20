@@ -7,7 +7,7 @@ void exit_help(void);
 void help_help(void);
 
 /**
- * help_all - Display
+ * all_help - Display
  */
 void all_help(void)
 {
@@ -29,7 +29,7 @@ void all_help(void)
 }
 
 /**
- * help_alias - Displa
+ * alias_help - Displa
  */
 void alias_help(void)
 {
@@ -51,7 +51,7 @@ void alias_help(void)
 }
 
 /**
- * help_cd - Displays i
+ * cd_help - Displays i
  */
 void cd_help(void)
 {
@@ -71,7 +71,7 @@ void cd_help(void)
 }
 
 /**
- * help_exit - Displays informa
+ * exit_help - Displays informa
  */
 void exit_help(void)
 {
