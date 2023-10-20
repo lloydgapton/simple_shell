@@ -1,18 +1,18 @@
 #include "shell.h"
 
-char *get_args(char *line, int *exe_ret);
-int call_args(char **args, char **front, int *exe_ret);
-int run_args(char **args, char **front, int *exe_ret);
-int handle_args(int *exe_ret);
-int check_args(char **args);
+char *args_get(char *line, int *exe_ret);
+int args_call(char **args, char **front, int *exe_ret);
+int args_run(char **args, char **front, int *exe_ret);
+int args_handle(int *exe_ret);
+int args_check(char **args);
 
 /**
- * get_args - Ge
+ * args_get - Ge
  * @line: A buff
  * @exe_ret: The retu
  * Return: If an err
  */
-char *get_args(char *line, int *exe_ret)
+char *args_get(char *line, int *exe_ret)
 {
 	size_t n = 0;
 	ssize_t read;
@@ -40,13 +40,13 @@ char *get_args(char *line, int *exe_ret)
 }
 
 /**
- * call_args - Partitio
+ * args_call - Partitio
  * @args: An arr
  * @front: A doub
  * @exe_ret: The retur
  * Return: The retu
  */
-int call_args(char **args, char **front, int *exe_ret)
+int args_call(char **args, char **front, int *exe_ret)
 {
 	int ret, index;
 
@@ -97,13 +97,13 @@ int call_args(char **args, char **front, int *exe_ret)
 }
 
 /**
- * run_args - C
+ * args_run- C
  * @args: An
  * @front: A do
  * @exe_ret: The return val
  * Return: The return valu
  */
-int run_args(char **args, char **front, int *exe_ret)
+int args_run(char **args, char **front, int *exe_ret)
 {
 	int ret, i;
 	int (*builtin)(char **args, char **front);
@@ -131,11 +131,11 @@ int run_args(char **args, char **front, int *exe_ret)
 }
 
 /**
- * handle_args - Gets, call
+ * args_handle - Gets, call
  * @exe_ret: The r
  * Return: If an end-
  */
-int handle_args(int *exe_ret)
+int args_handle(int *exe_ret)
 {
 	int ret = 0, index;
 	char **args, *line = NULL, **front;
@@ -175,11 +175,11 @@ int handle_args(int *exe_ret)
 }
 
 /**
- * check_args - Checks if t
+ * args_check - Checks if t
  * @args: 2D poi
  * Return: If
  */
-int check_args(char **args)
+int args_check(char **args)
 {
 	size_t i;
 	char *cur, *nex;
