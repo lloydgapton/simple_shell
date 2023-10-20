@@ -131,4 +131,19 @@ void help_unsetenv(void);
 void help_history(void);
 
 int proc_file_commands(char *file_path, int *exe_ret);
+int num_len(int num);
+int main(int argc, char *argv[])
+int cant_open(char *file_path);
+int token_len(char *str, char *delim);
+int count_tokens(char *str, char *delim);
+void free_list(list_t *head);
+void set_alias(char *var_name, char *value);
+void print_alias(alias_t *alias);
+void assign_lineptr(char **lineptr, size_t *n, char *buffer, size_t b);
+void logical_ops(char *line, ssize_t *new_len);
+void sig_handler(int sig);
+char *get_pid(void);
+char *get_env_value(char *beginning, int len);
+char *fill_path_dir(char *path);
+ssize_t get_new_len(char *line);
 #endif /* _SHELL_H_ */
