@@ -1,16 +1,16 @@
 #include "shell.h"
 
-int token_len(char *str, char *delim);
-int count_tokens(char *str, char *delim);
+int len_token(char *str, char *delim);
+int tokens_count(char *str, char *delim);
 char **_strtok(char *line, char *delim);
 
 /**
- * token_len - Locate
+ * len_token - Locate
  * @str: The
  * @delim: Th
  * Return: The del
  */
-int token_len(char *str, char *delim)
+int len_token(char *str, char *delim)
 {
 	int index = 0, len = 0;
 
@@ -24,12 +24,12 @@ int token_len(char *str, char *delim)
 }
 
 /**
- * count_tokens - Cou
+ * tokens_count - Cou
  * @str: T
  * @delim: The
  * Return: The numb
  */
-int count_tokens(char *str, char *delim)
+int tokens_count(char *str, char *delim)
 {
 	int index, tokens = 0, len = 0;
 
