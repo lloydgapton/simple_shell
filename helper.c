@@ -6,9 +6,9 @@ char *get_env_value(char *beginning, int len);
 void variable_replacement(char **args, int *exe_ret);
 
 /**
- * free_args - Frees up memory taken by args.
- * @args: A null-terminated double pointer containing commands/arguments.
- * @front: A double pointer to the beginning of args.
+ * free_args - Free
+ * @args: A null-termi
+ * @front: A double p
  */
 void free_args(char **args, char **front)
 {
@@ -21,13 +21,8 @@ void free_args(char **args, char **front)
 }
 
 /**
- * get_pid - Gets the current process ID.
- * Description: Opens the stat file, a space-delimited file containing
- *              information about the current process. The PID is the
- *              first word in the file. The function reads the PID into
- *              a buffer and replace the space at the end with a \0 byte.
- *
- * Return: The current process ID or NULL on failure.
+ * get_pid - Gets the cu
+ * Return: The cu
  */
 char *get_pid(void)
 {
@@ -57,14 +52,10 @@ char *get_pid(void)
 }
 
 /**
- * get_env_value - Gets the value corresponding to an environmental variable.
- * @beginning: The environmental variable to search for.
- * @len: The length of the environmental variable to search for.
- *
- * Return: If the variable is not found - an empty string.
- *         Otherwise - the value of the environmental variable.
- *
- * Description: Variables are stored in the format VARIABLE=VALUE.
+ * get_env_value - Gets the valu
+ * @beginning: The environ
+ * @len: The length o
+ * Return: If the v
  */
 char *get_env_value(char *beginning, int len)
 {
@@ -94,13 +85,9 @@ char *get_env_value(char *beginning, int len)
 }
 
 /**
- * variable_replacement - Handles variable replacement.
- * @line: A double pointer containing the command and arguments.
- * @exe_ret: A pointer to the return value of the last executed command.
- *
- * Description: Replaces $$ with the current PID, $? with the return value
- *              of the last executed program, and envrionmental variables
- *              preceded by $ with their corresponding value.
+ * variable_replacement - Handles var
+ * @line: A double poi
+ * @exe_ret: A pointe
  */
 void variable_replacement(char **line, int *exe_ret)
 {
@@ -125,11 +112,10 @@ void variable_replacement(char **line, int *exe_ret)
 			}
 			else if (old_line[j + 1])
 			{
-				/* extract the variable name to search for */
 				for (k = j + 1; old_line[k] &&
-						old_line[k] != '$' &&
-						old_line[k] != ' '; k++)
-					;
+				old_line[k] != '$' &&
+				old_line[k] != ' '; k++)
+				;
 				len = k - (j + 1);
 				replacement = get_env_value(&old_line[j + 1], len);
 			}

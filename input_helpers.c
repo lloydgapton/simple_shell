@@ -7,12 +7,10 @@ int handle_args(int *exe_ret);
 int check_args(char **args);
 
 /**
- * get_args - Gets a command from standard input.
- * @line: A buffer to store the command.
- * @exe_ret: The return value of the last executed command.
- *
- * Return: If an error occurs - NULL.
- *         Otherwise - a pointer to the stored command.
+ * get_args - Ge
+ * @line: A buff
+ * @exe_ret: The retu
+ * Return: If an err
  */
 char *get_args(char *line, int *exe_ret)
 {
@@ -42,12 +40,11 @@ char *get_args(char *line, int *exe_ret)
 }
 
 /**
- * call_args - Partitions operators from commands and calls them.
- * @args: An array of arguments.
- * @front: A double pointer to the beginning of args.
- * @exe_ret: The return value of the parent process' last executed command.
- *
- * Return: The return value of the last executed command.
+ * call_args - Partitio
+ * @args: An arr
+ * @front: A doub
+ * @exe_ret: The retur
+ * Return: The retu
  */
 int call_args(char **args, char **front, int *exe_ret)
 {
@@ -100,12 +97,11 @@ int call_args(char **args, char **front, int *exe_ret)
 }
 
 /**
- * run_args - Calls the execution of a command.
- * @args: An array of arguments.
- * @front: A double pointer to the beginning of args.
- * @exe_ret: The return value of the parent process' last executed command.
- *
- * Return: The return value of the last executed command.
+ * run_args - C
+ * @args: An
+ * @front: A do
+ * @exe_ret: The return val
+ * Return: The return valu
  */
 int run_args(char **args, char **front, int *exe_ret)
 {
@@ -135,12 +131,9 @@ int run_args(char **args, char **front, int *exe_ret)
 }
 
 /**
- * handle_args - Gets, calls, and runs the execution of a command.
- * @exe_ret: The return value of the parent process' last executed command.
- *
- * Return: If an end-of-file is read - END_OF_FILE (-2).
- *         If the input cannot be tokenized - -1.
- *         O/w - The exit value of the last executed command.
+ * handle_args - Gets, call
+ * @exe_ret: The r
+ * Return: If an end-
  */
 int handle_args(int *exe_ret)
 {
@@ -182,11 +175,9 @@ int handle_args(int *exe_ret)
 }
 
 /**
- * check_args - Checks if there are any leading ';', ';;', '&&', or '||'.
- * @args: 2D pointer to tokenized commands and arguments.
- *
- * Return: If a ';', '&&', or '||' is placed at an invalid position - 2.
- *	   Otherwise - 0.
+ * check_args - Checks if t
+ * @args: 2D poi
+ * Return: If
  */
 int check_args(char **args)
 {
