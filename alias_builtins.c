@@ -1,9 +1,9 @@
 #include "shell.h"
 
-int shellby_alias(char **args, char __attribute__((__unused__)) **front);
-char **replace_aliases(char **args);
-void set_alias(char *var_name, char *value);
-void print_alias(alias_t *alias);
+int alias_shellby(char **args, char __attribute__((__unused__)) **front);
+char **aliases_replace(char **args);
+void alias_set(char *var_name, char *value);
+void alias_print(alias_t *alias);
 
 /**
  * shellby_alias - func
@@ -11,7 +11,7 @@ void print_alias(alias_t *alias);
  * @front: A double
  * Return: If an
  */
-int shellby_alias(char **args, char __attribute__((__unused__)) **front)
+int alias_shellby(char **args, char __attribute__((__unused__)) **front)
 {
 	alias_t *temp = aliases;
 	int i, ret = 0;
@@ -55,7 +55,7 @@ int shellby_alias(char **args, char __attribute__((__unused__)) **front)
  * @var_name: Name
  * @value: Value of
  */
-void set_alias(char *var_name, char *value)
+void alias_set(char *var_name, char *value)
 {
 	alias_t *temp = aliases;
 	int len, j, k;
@@ -91,7 +91,7 @@ void set_alias(char *var_name, char *value)
  * print_alias - Prints the
  * @alias: Point
  */
-void print_alias(alias_t *alias)
+void alias_print(alias_t *alias)
 {
 	char *alias_string;
 	int len = _strlen(alias->name) + _strlen(alias->value) + 4;
@@ -112,7 +112,7 @@ void print_alias(alias_t *alias)
  * @args: 2D poin
  * Return: 2D p
  */
-char **replace_aliases(char **args)
+char **aliases_replace(char **args)
 {
 	alias_t *temp;
 	int i;
